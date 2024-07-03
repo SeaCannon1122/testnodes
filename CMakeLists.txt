@@ -11,22 +11,16 @@ find_package(rclcpp REQUIRED)
 find_package(std_msgs REQUIRED)
 find_package(geometry_msgs REQUIRED)
 add_executable(maintestnode src/maintestnode.cpp)
-add_executable(talker src/talker.cpp)
-add_executable(driveenabler src/driveenabler.cpp)
-add_executable(servosub src/servosub.cpp)
+add_executable(speednode src/speednode.cpp)
 ament_target_dependencies(maintestnode rclcpp std_msgs geometry_msgs)
-ament_target_dependencies(talker rclcpp std_msgs geometry_msgs)
-ament_target_dependencies(driveenabler rclcpp std_msgs geometry_msgs)
-ament_target_dependencies(servosub rclcpp std_msgs geometry_msgs)
+ament_target_dependencies(speednode rclcpp std_msgs )
 # uncomment the following section in order to fill in
 # further dependencies manually.
 # find_package(<dependency> REQUIRED)
 
 install(TARGETS
   maintestnode
-  talker
-  driveenabler
-  servosub
+  speednode
   DESTINATION lib/${PROJECT_NAME})
 
 if(BUILD_TESTING)
