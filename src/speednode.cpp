@@ -33,6 +33,7 @@ private:
     std::lock_guard<std::mutex> lock(mutex_);
     auto msg = std_msgs::msg::Float32MultiArray();
     msg.data.resize(6);
+    for(int i = 0; i < 6; i++) msg.data[i] = 0;
     msg.data[wheel_] = 60 * speed_ / (2 * wheelradius * M_PI);
     motor_vel_pub_->publish(msg);
   }
