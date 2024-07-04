@@ -12,8 +12,10 @@ find_package(std_msgs REQUIRED)
 find_package(geometry_msgs REQUIRED)
 add_executable(maintestnode src/maintestnode.cpp)
 add_executable(speednode src/speednode.cpp)
+add_executable(edutest src/edutest.cpp)
 ament_target_dependencies(maintestnode rclcpp std_msgs geometry_msgs)
 ament_target_dependencies(speednode rclcpp std_msgs )
+ament_target_dependencies(edutest rclcpp geometry_msgs )
 # uncomment the following section in order to fill in
 # further dependencies manually.
 # find_package(<dependency> REQUIRED)
@@ -21,6 +23,7 @@ ament_target_dependencies(speednode rclcpp std_msgs )
 install(TARGETS
   maintestnode
   speednode
+  edutest
   DESTINATION lib/${PROJECT_NAME})
 
 if(BUILD_TESTING)
