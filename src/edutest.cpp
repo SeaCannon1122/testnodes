@@ -12,7 +12,7 @@
 class EduTest : public rclcpp::Node {
 public:
   EduTest() : Node("edutest"), publishing_(true) {
-    motor_vel_pub_ = this->create_publisher<geometry_msgs::msg::Twist>("vel/teleop", 10);
+    motor_vel_pub_ = this->create_publisher<geometry_msgs::msg::Twist>("eduard/vel/teleop", 10);
     timer_ = this->create_wall_timer(
       std::chrono::milliseconds(10), 
       std::bind(&EduTest::Publish, this)
